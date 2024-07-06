@@ -1,0 +1,13 @@
+@use "../general/" as g;
+
+.btn {
+  padding: 1.2rem 2rem;
+  font-size: 2.4rem;
+  border-radius: 5rem;
+  font-weight: bold;
+  border: none;
+  &.primary {
+    color: g.$brightFont;
+    background-color: g.$primary;
+  }
+}

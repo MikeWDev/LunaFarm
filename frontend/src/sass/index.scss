@@ -1,0 +1,9 @@
+//Base
+@use "./general/base";
+//Components
+@use "./components/nav-bar.scss";
+@use "./components/button.scss";
+@use "./components/module-single.scss";
+//Pages
+@use "./pages/home.scss";
+@use "./pages/module-display.scss";

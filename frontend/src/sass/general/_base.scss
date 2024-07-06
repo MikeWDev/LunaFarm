@@ -1,0 +1,29 @@
+@use "../general/" as g;
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: inherit;
+}
+html {
+  overflow-x: hidden;
+  font-size: 56%;
+}
+body {
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: Dosis;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
