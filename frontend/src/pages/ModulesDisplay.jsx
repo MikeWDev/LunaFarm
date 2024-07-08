@@ -1,25 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import ModuleSingle from "../components/ModuleSingle";
-import ModuleDetails from "../components/ModuleDetails";
+import { Outlet, useLoaderData } from "react-router-dom";
+import { FarmContext } from "../context/ModulesContext";
 
 const ModulesDisplay = () => {
-  const [allModules, setAllModules] = useState([]);
-  const [state, setState] = useState({
-    state: "closed",
-    id: "",
-  });
-  useEffect(() => {
-    fetch("http://localhost:3001/modules")
-      .then((res) => res.json())
-      .then((data) => setAllModules(data));
-  }, []);
-
+  const allModules = useLoaderData();
+  const { animationState, setAnimationState } = useContext(FarmContext);
+  console.log(animationState);
   return (
     <div className="container ">
-      <div className={`modules-display ${state?.state}`}>
+      <div className={`modules-display ${animationState}`}>
         <h1>All modules</h1>
         <div className="modules-con">
-          <div className={`modules-info ${state?.state}`}>
+          <div className={`modules-info ${animationState}`}>
             <h4>Name</h4>
             <h4>Temp</h4>
             <h4>Status</h4>
@@ -34,13 +27,13 @@ const ModulesDisplay = () => {
                     status={module.available}
                     key={module.id}
                     id={module.id}
-                    state={state}
-                    setState={setState}
+                    state={animationState}
+                    setState={setAnimationState}
                   />
                 );
               })}
           </ul>
-          <ModuleDetails state={state} />
+          <Outlet />
         </div>
       </div>
     </div>

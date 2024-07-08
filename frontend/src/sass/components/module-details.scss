@@ -1,0 +1,138 @@
+@use "../general/" as g;
+.module-details-con {
+  display: flex;
+  flex-direction: column;
+  width: 55rem;
+  background-color: g.$secondary;
+  gap: 2.4rem;
+  position: absolute;
+  top: 0;
+  right: 3%;
+  padding: 2.8rem;
+  border-radius: 2.4rem;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all ease-in-out 500ms;
+  &.details {
+    transition-delay: 500ms;
+    transition: all ease-in-out 500ms;
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  .module-primary-info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 1.2rem;
+    .module-buttons {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 0;
+      gap: 2rem;
+      .svg {
+        border: 2px solid g.$primary;
+        border-radius: 50%;
+        padding: 0.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 300ms all ease-in-out;
+        &.active {
+          transform: scale(1.1);
+        }
+        &:hover,
+        &.active {
+          background-color: g.$primary;
+          svg {
+            fill: g.$brightFont;
+          }
+        }
+      }
+    }
+    .input-field {
+      width: fit-content;
+      position: relative;
+      .svg-edit {
+        @include g.svg-edit;
+        position: absolute;
+        right: -20%;
+        top: -2%;
+      }
+      h3 {
+        font-size: 3.2rem;
+        width: fit-content;
+      }
+    }
+    .status {
+      display: flex;
+      flex-direction: row;
+      gap: 1.2rem;
+      align-items: center;
+
+      p {
+        font-size: 1.8rem;
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+      span {
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        &.true {
+          background-color: g.$green;
+        }
+        &.false {
+          background-color: g.$red;
+        }
+      }
+    }
+  }
+  .module-temp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+    .temp {
+      border-radius: 50%;
+      height: 15rem;
+      width: 15rem;
+      background-color: g.$primary;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .svg-edit {
+        @include g.svg-edit;
+        position: absolute;
+        top: -5%;
+        right: -20%;
+      }
+
+      p {
+        font-size: 4.2rem;
+        font-weight: bold;
+        z-index: 200;
+        color: g.$brightFont;
+      }
+    }
+    .heading {
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+  }
+  .module-desc {
+    font-size: 1.8rem;
+    position: relative;
+    .svg-edit {
+      position: absolute;
+      @include g.svg-edit;
+      right: 5%;
+      top: -70%;
+    }
+  }
+}

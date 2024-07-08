@@ -1,13 +1,27 @@
-import Navbar from "./components/Navbar";
+import ModuleDetails from "./components/ModuleDetails";
+import { moduleDetailsLoader, modulesLoader } from "./lib/loaders";
+import HomeScreen from "./pages/HomeScreen";
 import "./sass/index.scss";
-import Home from "./pages/Home";
-import ModulesDisplay from "./pages/ModulesDisplay";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <HomeScreen />,
+      loader: modulesLoader,
+      children: [
+        {
+          path: "/:id",
+          element: <ModuleDetails />,
+          loader: moduleDetailsLoader,
+        },
+      ],
+    },
+  ]);
   return (
     <>
-      <Navbar />
-      <Home />
-      <ModulesDisplay />
+      <RouterProvider router={router} />
     </>
   );
 }

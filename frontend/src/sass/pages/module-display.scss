@@ -2,10 +2,11 @@
 .modules-display {
   display: flex;
   flex-direction: column;
-  margin-bottom: 6.2rem;
+  margin-bottom: 60.2rem;
   gap: 2rem;
   width: 100%;
   transition: 1s ease-in-out all;
+  position: relative;
   &.details {
     transition: 1s ease-in-out all;
     margin-top: 12.2rem;
