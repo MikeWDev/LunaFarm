@@ -8,9 +8,6 @@ const Navbar = () => {
         <li>
           Luna <span>Farm</span>
         </li>
-        <li>
-          <Button text="Logout" type="primary" />
-        </li>
       </ul>
     </nav>
   );
