@@ -1,4 +1,4 @@
-import ModuleDetails from "./components/ModuleDetails";
+import ModuleDetails from "./components/ModuleDetails/ModuleDetails";
 import { moduleDetailsLoader, modulesLoader } from "./lib/loaders";
 import HomeScreen from "./pages/HomeScreen";
 import "./sass/index.scss";

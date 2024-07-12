@@ -8,8 +8,69 @@
   justify-content: center;
   transition: 300ms all ease-in-out;
   opacity: 0;
+  cursor: pointer;
+  &.required {
+    border: 2px rgba(128, 128, 128, 0.8) solid;
+
+    svg {
+      fill: rgba(128, 128, 128, 0.8);
+    }
+  }
   &.edit-mode {
     opacity: 1;
+  }
+  &.active {
+    transform: scale(1.1);
+  }
+  &:hover,
+  &.active {
+    background-color: g.$primary;
+    svg {
+      fill: g.$brightFont;
+    }
+  }
+}
+@mixin tempBox {
+  border-radius: 50%;
+  height: 15rem;
+  width: 15rem;
+  background-color: g.$primary;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin tempMark {
+  color: g.$primary;
+  font-size: 2.4rem;
+  font-weight: bold;
+  font-family: Dosis;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: g.$brightFont;
+  border: 3px solid g.$primary;
+  padding: 0.8rem 1rem;
+  border-radius: 50%;
+  &.red {
+    border: 3px solid g.$red;
+    color: g.$red;
+  }
+}
+@mixin actionButton {
+  border: 2px solid g.$primary;
+  border-radius: 50%;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms all ease-in-out;
+  cursor: pointer;
+  &.false {
+    filter: grayscale(100%);
   }
   &.active {
     transform: scale(1.1);

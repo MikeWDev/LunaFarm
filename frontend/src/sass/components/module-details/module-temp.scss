@@ -1,0 +1,59 @@
+@use "../../general/" as g;
+.target-temp-box {
+  @include g.tempBox;
+  .error-message {
+    position: absolute;
+    width: max-content;
+    bottom: -14%;
+  }
+  .svg-edit {
+    @include g.svg-edit;
+    position: absolute;
+    top: -8%;
+    left: -15%;
+  }
+
+  input {
+    font-size: 4.2rem;
+    font-weight: bold;
+    z-index: 200;
+    color: g.$brightFont;
+    background-color: transparent;
+    border: none;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    font-family: Dosis;
+    &.temp {
+      height: fit-content;
+      border: g.$brightFont solid 2px;
+      border-radius: 4px;
+    }
+  }
+  .temp-mark {
+    @include g.tempMark;
+  }
+}
+.current-temp-box {
+  position: relative;
+  @include g.tempBox;
+  &.false {
+    filter: grayscale(100%);
+  }
+  &.red {
+    background-color: g.$red;
+  }
+  .current-temp {
+    position: relative;
+    .temp-value {
+      color: g.$brightFont;
+      font-size: 4.2rem;
+      font-weight: bold;
+      font-family: Dosis;
+    }
+  }
+  .temp-mark {
+    @include g.tempMark;
+  
+  }
+}

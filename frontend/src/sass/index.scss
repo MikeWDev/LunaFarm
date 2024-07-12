@@ -4,7 +4,11 @@
 @use "./components/nav-bar.scss";
 @use "./components/button.scss";
 @use "./components/module-single.scss";
-@use "./components/module-details.scss";
+@use "./components/module-details/module-details.scss";
+@use "./components/module-details/error-message.scss";
+@use "./components/module-details/module-temp.scss";
+@use "./components/history-chart.scss";
+@use "./components/history-choice.scss";
 
 //Pages
 @use "./pages/home.scss";

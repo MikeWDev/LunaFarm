@@ -1,0 +1,171 @@
+@use "../../general/" as g;
+form {
+  &.history {
+    opacity: 0;
+    transition: all ease-in-out 500ms;
+  }
+  .module-details-con {
+    width: 55rem;
+    height: 50rem;
+    background-color: g.$secondary;
+    position: absolute;
+    top: 0;
+    right: 3%;
+    padding: 2.8rem;
+    border-radius: 2.4rem;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all ease-in-out 500ms;
+    z-index: -100;
+    &.details {
+      transition-delay: 500ms;
+      transition: all ease-in-out 500ms;
+      transform: scale(1.1);
+      opacity: 1;
+      z-index: 1;
+    }
+    &.history {
+      width: 100%;
+      right: 0;
+      padding-bottom: 2.6rem;
+    }
+    .chart-con {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: -100;
+    }
+    .module-wraper {
+      height: 100%;
+      display: flex;
+      gap: 4.6rem;
+      flex-direction: column;
+      opacity: 1;
+      transition: all ease-in-out 500ms;
+      &.history {
+        position: relative;
+        z-index: -100000;
+        opacity: 0;
+        transition: all ease-in-out 500ms;
+      }
+      .module-primary-info {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        gap: 1.2rem;
+        .module-buttons {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          right: 0;
+          gap: 2rem;
+          .svg {
+            @include g.actionButton;
+          }
+        }
+        .input-field {
+          width: fit-content;
+          position: relative;
+          transition: 300ms all ease-in-out;
+          .svg-edit {
+            @include g.svg-edit;
+            position: absolute;
+            right: -20%;
+            top: -2%;
+          }
+          input {
+            font-size: 3.2rem;
+            width: fit-content;
+            border: none;
+            font-weight: bold;
+            font-family: Dosis;
+            background-color: transparent;
+            &.name {
+              border: g.$primary solid 2px;
+              border-radius: 4px;
+            }
+          }
+        }
+        .status {
+          display: flex;
+          flex-direction: row;
+          gap: 1.2rem;
+          align-items: center;
+
+          p {
+            font-size: 1.8rem;
+            text-transform: capitalize;
+            font-weight: bold;
+          }
+          span {
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            &.true {
+              background-color: g.$green;
+            }
+            &.false {
+              background-color: g.$red;
+            }
+          }
+        }
+        .back-button {
+          @include g.actionButton;
+          position: absolute;
+          top: -50%;
+          left: -8%;
+          background-color: g.$secondary;
+          &.edit-mode {
+            filter: grayscale(100%);
+            pointer-events: none;
+          }
+        }
+      }
+      .module-temp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3.2rem;
+        .heading {
+          font-size: 2.4rem;
+          font-weight: bold;
+        }
+        .temp-container {
+          display: flex;
+          gap: 7rem;
+        }
+      }
+      .module-desc {
+        position: relative;
+        textarea {
+          font-size: 1.8rem;
+          width: 100%;
+          border: none;
+          background-color: transparent;
+          font-family: Dosis;
+          resize: none;
+          &::-webkit-scrollbar {
+            width: 10px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: g.$primary;
+            border-radius: 10px;
+          }
+
+          &.desc {
+            border: g.$primary solid 2px;
+            border-radius: 4px;
+          }
+        }
+        .svg-edit {
+          position: absolute;
+          @include g.svg-edit;
+          right: 0;
+          top: -60%;
+          z-index: 199;
+        }
+      }
+    }
+  }
+}

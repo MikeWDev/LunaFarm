@@ -1,0 +1,48 @@
+@use "../general/" as g;
+.choice-container {
+  position: absolute;
+  left: 0;
+  top: 20%;
+  z-index: 10000000000000000;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      label {
+        font-size: 1.6rem;
+        color: g.$primary;
+        font-weight: bold;
+      }
+      input,
+      select {
+        border: g.$primary solid 1px;
+        font-size: 1.6rem;
+        font-family: Dosis;
+        padding: 0.6rem;
+        border-radius: 0.6rem;
+      }
+      button {
+        @include g.actionButton;
+        width: fit-content;
+        align-self: center;
+        padding: 1rem;
+      }
+      select {
+        option {
+          border-radius: none;
+          padding: 0.6rem;
+        }
+      }
+    }
+    p {
+      color: red;
+      font-weight: bold;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
+}
