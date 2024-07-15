@@ -74,7 +74,9 @@ const ModuleTempDisplay = ({
             C°
           </p>
           <div className="current-temp">
-            <p className="temp-value">{currentTemp.temp}</p>
+            <p className="temp-value">
+              {moduleDetails.available === false ? "" : currentTemp.temp}
+            </p>
           </div>
         </div>
       </div>
