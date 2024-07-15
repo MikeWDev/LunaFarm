@@ -21,7 +21,6 @@ const FarmContextProvider = (props) => {
   }
 
   const updateModule = async (data) => {
-    console.log(data);
     try {
       await fetch(`http://localhost:3001/modules/${data.id}`, {
         headers: {
