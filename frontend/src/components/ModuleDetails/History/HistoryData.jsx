@@ -17,7 +17,7 @@ const HistoryData = ({ moduleId, moduleName }) => {
   const [fetchOptions, setFetchOptions] = useState({
     start: "",
     stop: "",
-    mode: "",
+    mode: "hourly",
     error: "",
   });
 
@@ -122,8 +122,15 @@ const HistoryData = ({ moduleId, moduleName }) => {
             </li>
             <li>
               <label htmlFor="">Mode</label>
-              <select onChange={changeHandler} name="mode" id="">
-                <option value="hourly">hourly</option>
+              <select
+                value={fetchOptions?.mode}
+                onChange={changeHandler}
+                name="mode"
+                id=""
+              >
+                <option selected value="hourly">
+                  hourly
+                </option>
                 <option value="daily">daily</option>
               </select>
             </li>

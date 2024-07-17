@@ -29,3 +29,9 @@ React-hook-form
 React-router-dom
 Sass
 Vite
+
+# Instrukcje
+
+uruchomienie frontendowej aplikacji
+
+npm run dev
