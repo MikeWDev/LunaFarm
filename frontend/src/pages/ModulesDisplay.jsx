@@ -5,8 +5,13 @@ import { FarmContext } from "../context/ModulesContext";
 import { modulesLoader } from "../lib/loaders";
 
 const ModulesDisplay = () => {
-  const { animationState, setAnimationState, allModules, setAllModules } =
-    useContext(FarmContext);
+  const {
+    animationState,
+    setAnimationState,
+    allModules,
+    setAllModules,
+    moduleDetails,
+  } = useContext(FarmContext);
   const res = useLoaderData();
   useEffect(() => {
     setAllModules(res);

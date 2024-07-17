@@ -27,6 +27,7 @@ const ModuleTempDisplay = ({
       });
   }, [tempUpdate, moduleId.id]);
 
+  console.log(moduleDetails?.available);
   return (
     <div className="module-temp">
       <div className="heading">Target temperature</div>
@@ -75,9 +76,7 @@ const ModuleTempDisplay = ({
           </p>
           <div className="current-temp">
             <p className="temp-value">
-              {moduleDetails?.available && moduleDetails?.available === false
-                ? " "
-                : currentTemp?.temp}
+              {moduleDetails?.available === false ? "" : currentTemp?.temp}
             </p>
           </div>
         </div>
@@ -85,5 +84,4 @@ const ModuleTempDisplay = ({
     </div>
   );
 };
-
 export default ModuleTempDisplay;

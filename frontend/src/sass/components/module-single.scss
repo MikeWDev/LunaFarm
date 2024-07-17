@@ -10,6 +10,9 @@
     border-radius: 30rem;
     cursor: pointer;
     transition: 1s all ease-in-out;
+    &.active {
+      border: solid 2px g.$primary;
+    }
     &:hover {
       transition: 1s all ease-in-out;
     }
